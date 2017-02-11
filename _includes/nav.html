@@ -1,0 +1,7 @@
+{% assign nav_pages = site.html_pages | sort: 'navpos' %}
+{% for p in nav_pages %}
+  {% if p.navpos %}
+      <a class="{{ include.nav_class }}{% if page.url == p.url %} active{% endif %}" href="{{ p.url }}">{{ p.title }}</a>
+  {% endif %}
+{% endfor %}
+

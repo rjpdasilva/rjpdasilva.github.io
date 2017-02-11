@@ -55,18 +55,19 @@ html {
 
 .sidebar {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
+
 @media (min-width: 48em) {
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
-    text-align: left;
+    width: 20rem;
+    text-align: right;
   }
 }
 
@@ -80,7 +81,7 @@ html {
   color: #fff;
   margin-top: 0;
   font-family: "Abril Fatface", serif;
-  font-size: 3.25rem;
+  font-size: 2rem;
 }
 
 /* Sidebar nav */
@@ -115,6 +116,66 @@ a.sidebar-nav-item:focus {
 }
 
 
+/* Topbar. */
+
+.topbar {
+  width: 0;
+  height: 0;
+}
+
+.topbar-footer {
+  width: 0;
+  height: 0;
+}
+
+@media (min-width: 48em) {
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 20rem;
+    height: 4rem;
+    width: 100%;
+    color: rgba(255,255,255,.5);
+    background-color: #303030;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .topbar-footer {
+    position: fixed;
+    top: 4rem;
+    left: 20rem;
+    height: 2rem;
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+/* Sidebar links */
+.topbar a {
+  color: #fff;
+}
+
+.topbar-nav {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.topbar-nav-item {
+  display: inline-block;
+  padding-left: 1rem;
+}
+a.topbar-nav-item:hover,
+a.topbar-nav-item:focus {
+  text-decoration: underline;
+}
+.topbar-nav-item.active {
+  font-weight: bold;
+}
+
+
 /* Container
  *
  * Align the contents of the site above the proper threshold with some margin-fu
@@ -122,12 +183,13 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    4rem;
+  padding-top:    0rem;
   padding-bottom: 4rem;
 }
 
 @media (min-width: 48em) {
   .content {
+    padding-top: 6rem;
     max-width: 38rem;
     margin-left: 20rem;
     margin-right: 2rem;
@@ -143,32 +205,6 @@ a.sidebar-nav-item:focus {
 
 
 /*
- * Reverse layout
- *
- * Flip the orientation of the page by placing the `.sidebar` on the right.
- */
-
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
-  }
-}
-
-
-
-/*
  * Themes
  *
  * As of v1.1, Hyde includes optional themes to color the sidebar and links
@@ -180,6 +216,9 @@ a.sidebar-nav-item:focus {
 /* Red */
 .theme-base-08 .sidebar {
   background-color: #ac4142;
+}
+.theme-base-08 .topbar {
+  background-color: #9c3132;
 }
 .theme-base-08 .content a,
 .theme-base-08 .related-posts li a:hover {
@@ -243,6 +282,9 @@ a.sidebar-nav-item:focus {
 /* Brown */
 .theme-base-0f .sidebar {
   background-color: #8f5536;
+}
+.theme-base-0f .topbar {
+  background-color: #9f6546;
 }
 .theme-base-0f .content a,
 .theme-base-0f .related-posts li a:hover {
